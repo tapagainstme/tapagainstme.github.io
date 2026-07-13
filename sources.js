@@ -17,7 +17,7 @@ const sources = [masterSource, ...(reactionSource ? [reactionSource] : []), ...(
 const files = {
   master_bible_v2: 'reference/Tap_Against_Me_Comprehensive_Game_Bible_v2.0.pdf',
   reaction_system_v1: 'reference/Tap_Against_Me_Reaction_System_Feature_Bible_v1.0.pdf',
-  competitive_biomes_v1: 'reference/Tap_Against_Me_Competitive_Biome_Expansion_Feature_Bible_v1.0.pdf',
+  competitive_biomes_v1: 'reference/Tap_Against_Me_Competitive_Biome_Expansion_Feature_Bible_v1.1.pdf',
   competitive_day_night: 'reference/Tap_Against_Me_Competitive_Day_Night_Gravity_Bible.pdf',
   tam_game_design_full: 'reference/Tap_Against_Me_TAM_Game_Design_Bible_v1.0.docx',
   game_design_addendum: 'reference/Tap_Against_Me_Game_Design_Bible_Addendum.pdf',
