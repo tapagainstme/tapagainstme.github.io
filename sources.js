@@ -1,4 +1,5 @@
 const sourceBibles = window.TAM_CORPUS || [];
+const reactionSource = window.TAM_REACTION_SOURCE;
 const masterBible = window.TAM_MASTER_BIBLE || { meta: { wordCount: 0 }, chapters: [] };
 const masterSource = {
   id: 'master_bible_v2',
@@ -11,9 +12,10 @@ const masterSource = {
     text: chapter.blocks.map((block) => block.text || (block.items || []).join('\n') || (block.rows || []).map((row) => row.join(' | ')).join('\n')).join('\n\n')
   }))
 };
-const sources = [masterSource, ...sourceBibles];
+const sources = [masterSource, ...(reactionSource ? [reactionSource] : []), ...sourceBibles];
 const files = {
   master_bible_v2: 'reference/Tap_Against_Me_Comprehensive_Game_Bible_v2.0.pdf',
+  reaction_system_v1: 'reference/Tap_Against_Me_Reaction_System_Feature_Bible_v1.0.pdf',
   competitive_day_night: 'reference/Tap_Against_Me_Competitive_Day_Night_Gravity_Bible.pdf',
   tam_game_design_full: 'reference/Tap_Against_Me_TAM_Game_Design_Bible_v1.0.docx',
   game_design_addendum: 'reference/Tap_Against_Me_Game_Design_Bible_Addendum.pdf',
@@ -35,7 +37,7 @@ document.querySelector('#word-total').textContent = new Intl.NumberFormat().form
 const allButton = document.createElement('button');
 allButton.className = 'source-tab';
 allButton.dataset.id = 'all';
-allButton.innerHTML = `<strong>Complete reference library</strong><span>MASTER + EIGHT UNIQUE SOURCES · ${new Intl.NumberFormat().format(totalWords)} WORDS</span>`;
+allButton.innerHTML = `<strong>Complete reference library</strong><span>MASTER + FEATURE ADDENDA + EIGHT UNIQUE SOURCES · ${new Intl.NumberFormat().format(totalWords)} WORDS</span>`;
 allButton.onclick = () => { active = 'all'; render(); };
 tabs.append(allButton);
 sources.forEach((source) => {
